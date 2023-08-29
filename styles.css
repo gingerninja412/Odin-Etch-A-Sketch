@@ -2,3 +2,25 @@
     padding: 0;
     margin: 0;
 }
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#grid{
+    width: 800px;
+    height: 800px;
+    border: 2px solid red;
+}
+
+#options{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 800px;
+    width: 200px;
+}
