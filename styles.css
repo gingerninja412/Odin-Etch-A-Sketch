@@ -12,9 +12,14 @@ body{
 }
 
 #grid{
-    width: 800px;
-    height: 800px;
+    width: 804px;
+    height: 804px;
+    padding: 0px;
     border: 2px solid #557A46;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 #options{
@@ -72,4 +77,9 @@ button{
 
 button:hover{
     background-color: #557A46;
+}
+
+.tile{
+    background-color: white;
+    border: 1px solid black;
 }
