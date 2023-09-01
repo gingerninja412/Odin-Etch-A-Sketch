@@ -39,3 +39,15 @@ body{
     flex-direction: column;
     align-items: center;
 }
+
+button{
+    border: none;
+    background-color: #F2EE9D;
+    height: 50px;
+    width: 100px;
+    border-radius: 10px;
+}
+
+button:hover{
+    background-color: #557A46;
+}
