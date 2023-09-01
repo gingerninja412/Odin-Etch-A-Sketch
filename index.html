@@ -9,10 +9,15 @@
     </head>
     <body>
         <div id="options">
-            <input type="color">
+            <div class="color-change">
+                <label for="color-selector">Select a color</label>
+                <input type="color" id="color-selector">
+            </div>
             <button>Clear grid</button>
-            <label for="size-change">change size</label>
-            <input id="size-change" type="range" min="1" max="64">
+            <div class="size-change">
+                <label for="size-change">change size</label>
+                <input id="size-change" type="range" min="1" max="64">
+            </div>
             <button>Shade</button>
             <button>Eraser</button>
             <button>Random</button>
