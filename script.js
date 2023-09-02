@@ -16,12 +16,25 @@ function setEraser(){
     random = false
 }
 
+function setRandom(){
+    erase = false
+    shade = false
+    random = true
+}
+
 function pickColor(){
-    if (erase == true){
-        return "#FFFFFF"
-    }else if(colorPicker.value != color){
+    if(colorPicker.value != color){
         color = colorPicker.value
+        erase = false
+        shade = false
+        random = false
         return colorPicker.value
+    } else if (erase == true){
+        return "#FFFFFF"
+    } else if (random == true){
+        let rainbowList = ["#E81416", "#FFA500", "#FAEB36", "#79C314", "#487DE7", "#4B369D", "#70369D"]
+        let selector = Math.floor(Math.random() * 6)
+        return rainbowList[selector]
     }
     return colorPicker.value
 }
