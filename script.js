@@ -22,6 +22,13 @@ function setRandom(){
     random = true
 }
 
+function clearGrid() {
+    console.log(grid.childNodes)
+    grid.childNodes.forEach(item => {
+        item.style.background = "#FFFFFF"
+    })
+}
+
 function pickColor(){
     if(colorPicker.value != color){
         color = colorPicker.value
