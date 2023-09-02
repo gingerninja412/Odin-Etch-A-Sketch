@@ -1,6 +1,31 @@
+//all html components
 const sizeSelector = document.getElementById("size-change")
 const indicator = document.getElementById("sizeIndicator")
 const grid = document.getElementById("grid")
+const colorPicker = document.getElementById("color-selector")
+
+//variables used to store color settings
+let random = false
+let erase = false
+let shade = false
+let color = colorPicker.value
+
+function setEraser(){
+    erase = true
+    shade = false
+    random = false
+}
+
+function pickColor(){
+    if (erase == true){
+        return "#FFFFFF"
+    }else if(colorPicker.value != color){
+        color = colorPicker.value
+        return colorPicker.value
+    }
+    return colorPicker.value
+}
+
 function fillGrid(size){
     while(grid.lastChild){
         grid.removeChild(grid.lastChild)
@@ -15,6 +40,9 @@ function fillGrid(size){
         newTile.setAttribute("style", `width: ${tileWidth}px; height: ${tileWidth}px;`)
         newTile.classList.add("tile")
         grid.appendChild(newTile)
+        newTile.addEventListener("click", function (e) {
+            e.target.style.background = pickColor()
+        })
         tileList.push(newTile)
     }
 }
