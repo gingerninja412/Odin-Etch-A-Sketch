@@ -7,18 +7,15 @@ const colorPicker = document.getElementById("color-selector")
 //variables used to store color settings
 let random = false
 let erase = false
-let shade = false
 let color = colorPicker.value
 
 function setEraser(){
     erase = true
-    shade = false
     random = false
 }
 
 function setRandom(){
     erase = false
-    shade = false
     random = true
 }
 
@@ -33,8 +30,8 @@ function pickColor(){
     if(colorPicker.value != color){
         color = colorPicker.value
         erase = false
-        shade = false
         random = false
+        console.log(color)
         return colorPicker.value
     } else if (erase == true){
         return "#FFFFFF"
@@ -61,7 +58,9 @@ function fillGrid(size){
         newTile.classList.add("tile")
         grid.appendChild(newTile)
         newTile.addEventListener("click", function (e) {
+            
             e.target.style.background = pickColor()
+            
         })
         tileList.push(newTile)
     }
@@ -70,7 +69,12 @@ function fillGrid(size){
 function changeIndicator(){
     let sizeValue = sizeSelector.value
     console.log(sizeValue)
+    console.log(sizeValue)
     fillGrid(sizeValue)
     indicator.textContent = `${sizeValue} X ${sizeValue}`
 }
 
+window.onload = () => {
+    fillGrid(16)
+}
+    
